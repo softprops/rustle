@@ -14,8 +14,7 @@ RUN \
   && $RUST_DIR/install.sh \
   && rm -r $RUST_DIR
 
-RUN echo "downloading docker" \
-  && curl https://get.docker.com/builds/Linux/x86_64/docker-latest -O /usr/bin/docker \
+RUN curl -o /usr/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-latest \
   && chmod +x /usr/bin/docker
 
 VOLUME /src
